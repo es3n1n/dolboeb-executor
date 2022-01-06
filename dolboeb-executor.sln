@@ -5,6 +5,7 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dolboeb-executor", "dolboeb-executor\dolboeb-executor.vcxproj", "{91ED6DED-559B-4C2A-AAD0-4646B9E480E9}"
 	ProjectSection(ProjectDependencies) = postProject
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C} = {4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}
 		{161507CA-7740-4B02-A65E-CC85AC2CAEE9} = {161507CA-7740-4B02-A65E-CC85AC2CAEE9}
 	EndProjectSection
 EndProject
@@ -14,10 +15,18 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dolboeb-shared", "dolboeb-s
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "lib-dolboeb-executor", "lib-dolboeb-executor\lib-dolboeb-executor.vcxproj", "{161507CA-7740-4B02-A65E-CC85AC2CAEE9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{6FA874CF-BD93-4860-B0DB-E49F7846D1FE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "phymem-sample", "phymem-sample\phymem-sample.vcxproj", "{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{161507CA-7740-4B02-A65E-CC85AC2CAEE9} = {161507CA-7740-4B02-A65E-CC85AC2CAEE9}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		dolboeb-shared\dolboeb-shared.vcxitems*{161507ca-7740-4b02-a65e-cc85ac2caee9}*SharedItemsImports = 4
 		dolboeb-shared\dolboeb-shared.vcxitems*{30bd170b-4b75-4217-90c7-f025700ec0ce}*SharedItemsImports = 9
+		dolboeb-shared\dolboeb-shared.vcxitems*{4ee2d597-ef7c-4ba5-bb74-572fa5d4940c}*SharedItemsImports = 4
 		dolboeb-shared\dolboeb-shared.vcxitems*{794da92e-7474-46ab-8d2f-1274a7b7fd54}*SharedItemsImports = 4
 		dolboeb-shared\dolboeb-shared.vcxitems*{91ed6ded-559b-4c2a-aad0-4646b9e480e9}*SharedItemsImports = 4
 	EndGlobalSection
@@ -52,9 +61,20 @@ Global
 		{161507CA-7740-4B02-A65E-CC85AC2CAEE9}.Release|x64.Build.0 = Release|x64
 		{161507CA-7740-4B02-A65E-CC85AC2CAEE9}.Release|x86.ActiveCfg = Release|Win32
 		{161507CA-7740-4B02-A65E-CC85AC2CAEE9}.Release|x86.Build.0 = Release|Win32
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}.Debug|x64.ActiveCfg = Debug|x64
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}.Debug|x64.Build.0 = Debug|x64
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}.Debug|x86.ActiveCfg = Debug|Win32
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}.Debug|x86.Build.0 = Debug|Win32
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}.Release|x64.ActiveCfg = Release|x64
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}.Release|x64.Build.0 = Release|x64
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}.Release|x86.ActiveCfg = Release|Win32
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4EE2D597-EF7C-4BA5-BB74-572FA5D4940C} = {6FA874CF-BD93-4860-B0DB-E49F7846D1FE}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7A84958F-62A6-4639-97AA-42F44294055C}

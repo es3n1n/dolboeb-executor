@@ -1,5 +1,5 @@
 #include <Windows.h>
-#include "phymem/c_phymem.hpp"
+#include <c_phymem.hpp>
 
 
 using namespace dolboeb;
@@ -25,7 +25,7 @@ int main( ) {
 
 	//
 	// Initializing dolboeb-manager
-	dolboeb::c_manager manager = dolboeb::c_manager( my_exploit );
+	c_manager manager( my_exploit );
 	manager.init_exploit( );
 
 	//
@@ -39,7 +39,7 @@ int main( ) {
 	//
 	// Getting some imports from ntoskrnl that we'll use later
 	const auto dbgprint = manager.m_utils->get_ntoskrnl_export( "DbgPrint" );
-	util::logger::info( "DebugPrint: 0x%p", dbgprint );
+	util::logger::debug( "DebugPrint: 0x%p", dbgprint );
 
 	//
 	// Execute our callback in kernel

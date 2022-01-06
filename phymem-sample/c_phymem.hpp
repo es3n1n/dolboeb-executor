@@ -4,6 +4,8 @@
 #include <dolboeb_executor.hpp>
 #include "resources/phymemx.hpp"
 
+#pragma comment(lib, "lib-dolboeb-executor.lib")
+
 
 namespace exploit {
 	struct control_ctx_t {

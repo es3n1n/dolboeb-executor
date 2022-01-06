@@ -80,28 +80,28 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)lib-dolboeb-executor\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)..\lib-dolboeb-executor\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>$(SolutionDir)output\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)output\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)intermediates\$(Configuration)\$(MSBuildProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)lib-dolboeb-executor\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)..\lib-dolboeb-executor\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>$(SolutionDir)output\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)output\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)intermediates\$(Configuration)\$(MSBuildProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>$(SolutionDir)lib-dolboeb-executor\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)..\lib-dolboeb-executor\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>$(SolutionDir)output\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)output\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)intermediates\$(Configuration)\$(MSBuildProjectName)\</IntDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
-    <IncludePath>$(SolutionDir)lib-dolboeb-executor\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
+    <IncludePath>$(ProjectDir)..\lib-dolboeb-executor\;$(VC_IncludePath);$(WindowsSDK_IncludePath);</IncludePath>
     <LibraryPath>$(SolutionDir)output\$(Configuration)\;$(LibraryPath)</LibraryPath>
     <OutDir>$(SolutionDir)output\$(Configuration)\</OutDir>
     <IntDir>$(SolutionDir)intermediates\$(Configuration)\$(MSBuildProjectName)\</IntDir>

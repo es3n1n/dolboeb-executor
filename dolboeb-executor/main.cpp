@@ -1,8 +1,8 @@
 #include <Windows.h>
-#include "bootstrap/bootstrap.hpp"
-#include "dolboeb-executor/dolboeb_executor.hpp"
-#include "util/util.hpp"
 #include "phymem/c_phymem.hpp"
+
+
+using namespace dolboeb;
 
 
 int main( ) {
@@ -10,11 +10,11 @@ int main( ) {
 
 	//
 	// Granting priviledges
-	util::grant_priviledges( { L"SeDebugPrivilege",  L"SeLoadDriverPrivilege" } );
+	util::grant_privileges( { L"SeDebugPrivilege",  L"SeLoadDriverPrivilege" } );
 
 	//
 	// Initializing custom exploit
-	exploit::i_exploit* my_exploit = new exploit::c_phymem( );
+	i_exploit* my_exploit = new exploit::c_phymem( );
 
 	//
 	// Initializing dolboeb-core

@@ -1,12 +1,12 @@
-#include "util/svc/svc.hpp"
-#include "util/logger.hpp"
-#include "util/io/io.hpp"
+#include "../svc/svc.hpp"
+#include "../logger.hpp"
+#include "../io/io.hpp"
 #include "shared/nt.hpp"
 #include <winternl.h>
 #pragma comment(lib, "ntdll.lib")
 
 
-namespace util::svc {
+namespace dolboeb::util::svc {
 	bool start( const std::string& name, const std::string& path ) {
 		HKEY services_key, svc_key;
 
@@ -87,23 +87,20 @@ namespace util::svc {
 		util::logger::debug( "Writing file to %s", path.c_str( ) );
 
 	OPEN_SVC_FILE:
-		auto f = util::io::create_file( path.c_str( ) );
-		if ( f == INVALID_HANDLE_VALUE ) {
-			f = util::io::open_file( path.c_str( ) );
-		}
+		auto f = util::io::c_file::create( path.c_str( ) );
 
-		if ( f == INVALID_HANDLE_VALUE ) {
+		if ( !f.safe( ) ) {
 			if ( !stop( name ) )
 				return false;
 			goto OPEN_SVC_FILE;
 		}
 
-		if ( !util::io::write_file( f, res, size ) ) {
+		if ( !f.write( res, size ) ) {
 			util::logger::error( "Failed to write file %d", GetLastError( ) );
 			return false;
 		}
 
-		util::io::close_file( f );
+		f.close( );
 
 		if ( !util::svc::start( name, path.c_str( ) ) ) {
 			util::logger::error( "Failed to create svc" );

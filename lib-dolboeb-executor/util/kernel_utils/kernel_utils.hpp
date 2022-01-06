@@ -1,13 +1,14 @@
 #pragma once
-#include "exploit/i_exploit.hpp"
+#include <Windows.h>
 #include <string>
+#include "../../exploit/i_exploit.hpp"
 
 
-namespace exploit {
+namespace dolboeb::util {
 	class c_kernel_utils {
 	public:
 		c_kernel_utils( ) = default;
-		c_kernel_utils( exploit::i_exploit* dev );
+		c_kernel_utils( i_exploit* dev );
 		~c_kernel_utils( );
 
 	public:
@@ -27,7 +28,7 @@ namespace exploit {
 		uint64_t get_ntoskrnl_export( const std::string& fn_name );
 
 	private:
-		exploit::i_exploit* m_dev;
+		i_exploit* m_dev;
 		HMODULE m_ntoskrnl = 0x0;
 	};
 }

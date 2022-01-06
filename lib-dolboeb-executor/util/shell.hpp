@@ -3,7 +3,7 @@
 #include <cstdint>
 
 
-namespace util {
+namespace dolboeb::util {
 	class c_shellcode_crafter {
 	private:
 		uint8_t* buffer {};

@@ -1,13 +1,8 @@
 #pragma once
 #include <Windows.h>
 #include <cstdint>
-#include "util/logger.hpp"
-#include "exploit/i_exploit.hpp"
-#include "util/svc/svc.hpp"
-#include "phymem/resources/phymemx.hpp"
-
-
-#define DRV_NAME "phymem"
+#include <dolboeb_executor.hpp>
+#include "resources/phymemx.hpp"
 
 
 namespace exploit {
@@ -24,7 +19,7 @@ namespace exploit {
 		unmap = 0x80102044
 	};
 
-	class c_phymem : public i_exploit {
+	class c_phymem : public dolboeb::i_exploit {
 	public:
 		c_phymem( ) = default;
 		~c_phymem( ) = default;

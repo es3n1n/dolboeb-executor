@@ -1,8 +1,8 @@
 #include "bootstrap.hpp"
 
 
-namespace bootstrap {
-	bool startup( exploit::i_exploit* my_exploit ) {
+namespace dolboeb::bootstrap {
+	bool startup( i_exploit* my_exploit ) {
 		//
 		// Dropping our .sys file and loading it
 		if ( !my_exploit->setup_driver( ) ) {
@@ -20,7 +20,7 @@ namespace bootstrap {
 		return true;
 	}
 
-	void cleanup( exploit::i_exploit* my_exploit ) {
+	void cleanup( i_exploit* my_exploit ) {
 		//
 		// Unload driver and remove it
 		if ( !my_exploit->unload_driver( ) )

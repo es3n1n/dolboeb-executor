@@ -1,8 +1,8 @@
 #pragma once
-#include "util/shell.hpp"
+#include "../util/shell.hpp"
 
 
-namespace resources {
+namespace dolboeb::resources {
 	// @note: es3n1n: see `dolboeb-shellcode` project
 
 	inline util::c_shellcode_crafter craft_dolboeb_shellcode( uint64_t mm_get, uint64_t ke_set_affinity, uint64_t ke_query_affinity ) {

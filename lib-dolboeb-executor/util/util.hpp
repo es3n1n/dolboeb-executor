@@ -4,10 +4,10 @@
 #include <vector>
 
 
-namespace util {
+namespace dolboeb::util {
 	//
 	// Granting priviledges
-	inline void grant_priviledges( const std::vector<std::wstring_view> names ) {
+	inline void grant_privileges( const std::vector<std::wstring_view> names ) {
 		TOKEN_PRIVILEGES Priv, PrivOld;
 		DWORD cbPriv = sizeof( PrivOld );
 		HANDLE token;

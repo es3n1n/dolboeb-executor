@@ -1,10 +1,10 @@
-#include "dolboeb-manager/dolboeb_manager.hpp"
+#include "dolboeb_manager.hpp"
 
 
 namespace dolboeb {
-	c_manager::c_manager( exploit::i_exploit* exploit ) {
+	c_manager::c_manager( i_exploit* exploit ) {
 		m_exploit = exploit;
-		m_utils = new exploit::c_kernel_utils( m_exploit );
+		m_utils = new util::c_kernel_utils( m_exploit );
 	}
 
 	c_manager::~c_manager( ) {

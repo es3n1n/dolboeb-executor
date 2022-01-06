@@ -1,4 +1,4 @@
-#include "exploit/kernel_utils/kernel_utils.hpp"
+#include "kernel_utils.hpp"
 
 #include <Windows.h>
 #include <winternl.h>
@@ -6,8 +6,8 @@
 #include "shared/nt.hpp"
 
 
-namespace exploit {
-	c_kernel_utils::c_kernel_utils( exploit::i_exploit* dev ) {
+namespace dolboeb::util {
+	c_kernel_utils::c_kernel_utils( i_exploit* dev ) {
 		m_ntoskrnl = LoadLibraryExA( "ntoskrnl.exe", NULL, DONT_RESOLVE_DLL_REFERENCES );
 		m_dev = dev;
 	}
@@ -25,8 +25,8 @@ namespace exploit {
 
 			for ( int offset = 0; offset < 0x10000; offset += 0x1000 ) {
 				if ( ( 0x00000001000600E9 ^ ( 0xffffffffffff00ff & *( uint64_t* )( buffer + offset ) ) ) ||
-					( 0xfffff80000000000 ^ ( 0xfffff80000000000 & *( uint64_t* )( buffer + offset + 0x70 ) ) ) ||
-					( 0xffffff0000000fff & *( uint64_t* )( buffer + offset + 0xA0 ) ) )
+					 ( 0xfffff80000000000 ^ ( 0xfffff80000000000 & *( uint64_t* )( buffer + offset + 0x70 ) ) ) ||
+					 ( 0xffffff0000000fff & *( uint64_t* )( buffer + offset + 0xA0 ) ) )
 					continue;
 
 				uint64_t directory_base = *( uint64_t* )( buffer + offset + 0xA0 );
